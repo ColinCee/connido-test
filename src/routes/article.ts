@@ -22,20 +22,20 @@ router.post(
 
 router.get(
   "/",
-  query("page").isNumeric().optional().default(1),
+  query("page").isNumeric().default(1),
   query("title").isString().optional(),
-  query("author_name").isString().optional(),
+  query("authorName").isString().optional(),
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { page, title, author_name } = req.query;
+    const { page, title, authorName } = req.query || {};
 
     const searchOptions: SearchProps = {
       ...(title && { title }),
-      ...(author_name && { author: { name: author_name } }),
+      ...(authorName && { author: { name: authorName } }),
     };
     const result = await getArticles(Number(page), searchOptions);
     return res.send(result);

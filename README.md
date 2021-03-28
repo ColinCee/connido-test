@@ -50,7 +50,7 @@ To get a local copy up and running follow these simple steps.
 * [Node](https://nodejs.org/en/) (For local development only)
 ### Installation
 
-1. Clone the connido-test
+1. Clone the connido-test project (using SSH key)
     ```sh
     git clone git@github.com:ColinCee/connido-test.git
     ```
@@ -82,7 +82,9 @@ This means you can install dependencies on the host machine:
 npm install
 ```
 
-Then you can use your IDE or text editor of choice and still get intellisense. Recommend using VSCode as I've setup auto-formatting.
+- Then you can use your IDE or text editor of choice and still get intellisense.
+    - Recommend using [VSCode](https://code.visualstudio.com/) as I've setup auto-formatting.
+- Any changes on the host machine will hot reload the server thanks to [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

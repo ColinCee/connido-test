@@ -62,7 +62,6 @@ To get a local copy up and running follow these simple steps.
     - `POST localhost:3000/article`
         ```json
         {
-            // JSON BODY
             "title": "my first article",
             "content": "content",
             "author": {"name": "test1"}

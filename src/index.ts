@@ -1,12 +1,20 @@
 import express from "express";
+import { strict as assert } from "assert";
+import dbConnect from "./api/dbConnect";
+import article from "./routes/article";
 
 const app = express();
-const port = 3000;
+app.use(express.json());
+const port = process.env.PORT;
+assert(typeof port === "string", "PORT not set");
 
-app.get("/", (req, res) => {
-  res.send("Hello World!!!");
+app.get("/", async (req, res) => {
+  res.send("Hello world");
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+app.use("/article", article);
+
+app.listen(port, async () => {
+  console.log(`Listening on ${port}`);
+  dbConnect();
 });

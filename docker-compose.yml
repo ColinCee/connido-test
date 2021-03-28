@@ -9,6 +9,7 @@ services:
     environment:
       MONGODB_URI: mongodb://connido:password@db:27017/connido
       PORT: 3000
+      WAIT_HOSTS: db:27017
     volumes:
       - ./src:/app/src
     depends_on:

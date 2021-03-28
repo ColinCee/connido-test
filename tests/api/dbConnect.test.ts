@@ -10,6 +10,7 @@ describe("connect", () => {
 
     expect(mongoose.connect).toBeCalledWith("TEST_URI", {
       useNewUrlParser: true,
+      useUnifiedTopology: true,
       authSource: "connido",
     });
   });

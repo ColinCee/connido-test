@@ -22,7 +22,7 @@ router.post(
 
 router.get(
   "/",
-  query("page").isNumeric().default(1),
+  query("page").isNumeric().optional().default(1),
   query("title").isString().optional(),
   query("authorName").isString().optional(),
   async (req, res) => {

@@ -18,7 +18,7 @@ const ArticleSchema = new Schema<IArticle>(
     createdAt: { type: Date },
     updatedAt: { type: Date },
   },
-  { timestamps: true }
+  { timestamps: true, strict: true }
 );
 
 const Article: Model<IArticle> = model("Article", ArticleSchema);
